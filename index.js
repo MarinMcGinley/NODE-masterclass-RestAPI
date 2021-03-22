@@ -7,6 +7,10 @@ const fs = require('fs');
 const handlers = require('./lib/handlers');
 const helpers = require('./lib/helpers');
 
+helpers.sendSms('8456401', 'Hello World!', (error) => {
+    console.log('Unable to send message: ', error);
+});
+
 
 const httpServer = http.createServer((req, res) => {
     unifiedServer(req, res);
